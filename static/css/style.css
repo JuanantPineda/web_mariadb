@@ -246,3 +246,7 @@ td:last-child {
 td:last-child {
     border-bottom-right-radius: 8px;
 }
+
+.mayusculas {
+    text-transform: uppercase;
+}

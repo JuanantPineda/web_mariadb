@@ -6,14 +6,25 @@
     {% if conexion == "bien" %}
         <p>Conexión exitosa a la base de datos.</p>
         <h3>Tablas disponibles:</h3>
-        <ul>
-            {% for tabla in tablas %}
-                <li>{{ tabla[0] }}</li>
-            {% endfor %}
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de la Tabla</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tabla in tablas %}
+                    <tr>
+                        <td><a href="/tablas/{{ tabla[0] }}">{{ tabla[0] }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% elif conexion == "mal" %}
         <p>Error al conectar a la base de datos.</p>
     {% endif %}
+
+
 </section>
 
 {% endblock %}
